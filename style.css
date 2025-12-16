@@ -1,0 +1,117 @@
+:root{
+  --bg:#071019;
+  --panel:#0f1418;
+  --text:#e9eef1;
+  --muted:#9aa3ad;
+  --accent:#1eb9a6; /* teal accent */
+  --accent-2:#27c6a9;
+  --glass:rgba(255,255,255,0.03);
+  --border:rgba(255,255,255,0.04);
+  --shadow:0 18px 50px rgba(2,6,12,0.7);
+  --container:min(1200px,94%);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: "Noto Kufi Arabic", "Cairo", system-ui, Arial, sans-serif;
+  background: radial-gradient(800px 400px at 10% -10%, rgba(40,200,180,0.02), transparent 30%), var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.6;
+}
+
+/* container */
+.container{width:var(--container); margin-inline:auto; padding-inline:16px}
+
+/* NAV */
+.nav-wrap{position:fixed; top:0; left:0; right:0; z-index:1200}
+.nav{
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:14px 0; background:linear-gradient(to bottom, rgba(5,10,12,0.6), rgba(5,10,12,0.12));
+  border-bottom:1px solid var(--border); backdrop-filter: blur(6px);
+}
+.brand{color:var(--text); font-weight:900; text-decoration:none; font-size:1.1rem}
+.nav-links{list-style:none; display:flex; gap:18px; margin:0; padding:0}
+.nav-links a{color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:8px}
+.nav-links a:hover{color:var(--text); background:rgba(255,255,255,0.02)}
+.btn-outline{border:1px solid var(--border); padding:8px 12px; border-radius:10px; color:var(--text); background:transparent; text-decoration:none}
+
+/* HERO */
+.hero{min-height:72vh; display:grid; align-items:center; margin-top:64px; position:relative; overflow:hidden}
+.hero-bg{position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1505691723518-36a0f0b1f9a2?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; filter:brightness(.35) contrast(.95)}
+.overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(7,16,25,0.15), rgba(7,16,25,0.6))}
+.hero-content{position:relative; z-index:1; display:flex; gap:30px; align-items:center; justify-content:space-between; padding-block:40px}
+
+/* hero left */
+.hero-left{flex:1; max-width:680px}
+.hero-left h1{font-size:clamp(28px,4.6vw,48px); margin:0 0 12px}
+.muted{color:var(--muted)}
+.hero-ctas{display:flex; gap:12px; margin-top:14px}
+.hero-stats{display:flex; gap:18px; margin-top:20px}
+.hero-stats div{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:12px 18px; border-radius:10px; border:1px solid var(--border); text-align:center}
+
+/* hero right */
+.hero-right{width:420px}
+.card-show{border-radius:14px; overflow:hidden; box-shadow:var(--shadow); transform:translateY(-8px)}
+.card-show img{width:100%; display:block}
+
+/* sections */
+.section{padding:64px 0}
+.section-slim{padding:40px 0}
+.section-title{text-align:center; font-size:clamp(20px,3.6vw,34px); margin-bottom:28px; color:var(--text)}
+
+/* projects grid */
+.projects-grid{display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.project-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:var(--shadow); transition:transform .25s}
+.project-card:hover{transform:translateY(-8px)}
+.proj-img{aspect-ratio:16/10; overflow:hidden}
+.proj-img img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease}
+.project-card:hover .proj-img img{transform:scale(1.05)}
+.proj-body{padding:14px}
+.proj-meta{display:flex; gap:10px; align-items:center; margin-top:8px; flex-wrap:wrap}
+.tag{background:rgba(30,185,166,0.12); color:var(--accent); padding:6px 10px; border-radius:8px; font-weight:700}
+.status{margin-left:auto; background:rgba(255,255,255,0.03); padding:6px 10px; border-radius:8px}
+
+/* services */
+.services-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px}
+.service{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid var(--border); border-radius:12px; padding:14px; text-align:center}
+.service img{width:100%; height:140px; object-fit:cover; border-radius:10px; margin-bottom:12px}
+
+/* about */
+.about-grid{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center}
+.about-media img{width:100%; border-radius:12px; box-shadow:var(--shadow)}
+
+/* testimonials */
+.testi-grid{display:flex; gap:18px; justify-content:center; flex-wrap:wrap}
+.testi{background:var(--panel); padding:16px; border-radius:12px; border:1px solid var(--border); width:320px}
+
+/* contact area */
+.contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start}
+.contact-card{padding:18px; border-radius:12px}
+
+/* glass */
+.glass{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid var(--border); border-radius:12px; padding:14px; backdrop-filter: blur(6px)}
+
+/* footer */
+.footer{padding:26px 0; border-top:1px solid var(--border); color:var(--muted)}
+.foot{display:flex; justify-content:space-between}
+
+/* whatsapp floating */
+.whatsapp-float{position:fixed; bottom:18px; left:18px; z-index:1400; background:var(--accent); color:#041617; width:56px; height:56px; border-radius:50%; display:grid; place-items:center; font-size:22px; box-shadow:0 12px 30px rgba(30,185,166,0.12); text-decoration:none}
+
+/* modal */
+.modal{position:fixed; inset:0; display:none; z-index:2000}
+.modal.show{display:block}
+.modal-backdrop{position:absolute; inset:0; background:rgba(0,0,0,0.6)}
+.modal-card{position:relative; width:min(840px,96%); margin:6vh auto; background:var(--panel); border-radius:12px; padding:20px; box-shadow:var(--shadow)}
+.modal-close{position:absolute; left:12px; top:12px; background:transparent; border:1px solid var(--border); color:var(--muted); width:38px; height:38px; border-radius:8px; cursor:pointer}
+
+/* responsive */
+@media (max-width:1000px){
+  .about-grid{grid-template-columns:1fr}
+  .hero-content{flex-direction:column; text-align:center}
+  .hero-right{width:80%}
+  .nav-links{display:none}
+  .contact-grid{grid-template-columns:1fr}
+}
